@@ -235,7 +235,7 @@ export default function useAuth(
       connection
         .disconnect()
         .then(() => setCurrentIdentity(null))
-        .catch((err) => {
+        .catch((err: any) => {
           console.error(err)
           rollbar((rollbar) => rollbar.error(err))
           sentry((sentry) => sentry.captureException(err))
